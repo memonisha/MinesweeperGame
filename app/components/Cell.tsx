@@ -1,22 +1,30 @@
 'use client';
 
 import React from 'react';
-import { CellType } from '../../lib/types';
+import { CellType } from '../types';
+import './Cell.css';
 
 interface Props {
   cell: CellType;
-  onClick: () => void;
+  onClick: (x: number, y: number) => void;
 }
 
 const Cell: React.FC<Props> = ({ cell, onClick }) => {
   const getClass = () => {
-    if (cell.revealed) return 'cell revealed';
+    if (cell.isRevealed && cell.isMine) return 'cell revealed bomb';
+    if (cell.isRevealed) return 'cell revealed';
     return 'cell';
   };
 
   return (
-    <div className={getClass()} onClick={onClick}>
-      {cell.revealed && cell.value !== 0 ? cell.value : ''}
+    <div className={getClass()} onClick={() => onClick(cell.x, cell.y)}>
+      {cell.isRevealed
+        ? cell.isMine
+          ? '💣'
+          : cell.adjacentMines > 0
+            ? cell.adjacentMines
+            : ''
+        : ''}
     </div>
   );
 };

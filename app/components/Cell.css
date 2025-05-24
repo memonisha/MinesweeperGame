@@ -1,0 +1,28 @@
+.cell {
+  width: 40px;
+  height: 40px;
+  background-color: #eee;
+  border: 1px solid #999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+.cell:hover {
+  background-color: #ddd;
+}
+
+.cell.revealed {
+  background-color: #ccc;
+  cursor: default;
+}
+
+.cell.bomb {
+  background-color: crimson;
+  color: white;
+}

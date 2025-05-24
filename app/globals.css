@@ -1,12 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(120deg, #d3cce3, #e9e4f0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, black 0%, black 25%, #d0cde1 25%, #d0cde1 75%, black 75%, black 100%);
 }
 
 .container {

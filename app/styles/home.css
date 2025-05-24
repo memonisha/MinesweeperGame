@@ -1,0 +1,28 @@
+.gradient {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: gradientShift 20s ease infinite;
+  background: linear-gradient(270deg, #c2e9fb, #a1c4fd, #fbc2eb, #a6c1ee);
+  background-size: 800% 800%;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.floating-title {
+  font-size: 3rem;
+  animation: float 3s ease-in-out infinite;
+  color: white;
+  margin-bottom: 20px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
