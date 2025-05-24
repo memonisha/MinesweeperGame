@@ -3,9 +3,10 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import BoardComponent from '@/components/Board';
-import { Board } from '@/types';
-import { createEmptyBoard, placeMines, revealCell } from '@/utils';
+import BoardComponent from '../../components/Board';
+import { Board } from '../../lib/types';   
+import { createEmptyBoard, placeMines, revealCell } from '../../lib/utils';
+
 
 const ROWS = 8;
 const COLS = 8;
