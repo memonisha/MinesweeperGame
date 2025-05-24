@@ -1,12 +1,7 @@
-// lib/types.ts
-
-export type CellState = {
-  x: number;
-  y: number;
-  isRevealed: boolean;
-  isMine: boolean;
-  adjacentMines: number;
-  isFlagged: boolean;
+export type CellType = {
+  value: number | '💣';
+  revealed: boolean;
+  flagged: boolean;
 };
 
-export type BoardType = CellState[][];
+export type BoardType = CellType[][];

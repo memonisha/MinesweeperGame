@@ -1,34 +1,24 @@
-// app/components/Cell.tsx
-"use client";
+'use client';
 
 import React from 'react';
-import { CellState } from '../../lib/types';
-import styles from '../styles/Board.module.css';
+import { CellType } from '../../lib/types';
 
+interface Props {
+  cell: CellType;
+  onClick: () => void;
+}
 
-type Props = {
-  cell: CellState;
-  onClick: (x: number, y: number) => void;
-};
-
-export default function Cell({ cell, onClick }: Props) {
-  const handleClick = () => {
-    onClick(cell.x, cell.y);
-  };
-
-  const getDisplay = () => {
-    if (!cell.isRevealed) return '';
-    if (cell.isMine) return '💣';
-    if (cell.adjacentMines > 0) return cell.adjacentMines;
-    return '';
+const Cell: React.FC<Props> = ({ cell, onClick }) => {
+  const getClass = () => {
+    if (cell.revealed) return 'cell revealed';
+    return 'cell';
   };
 
   return (
-    <div
-      className={`${styles.cell} ${cell.isRevealed ? styles.revealed : ''}`}
-      onClick={handleClick}
-    >
-      {getDisplay()}
+    <div className={getClass()} onClick={onClick}>
+      {cell.revealed && cell.value !== 0 ? cell.value : ''}
     </div>
   );
-}
+};
+
+export default Cell;
