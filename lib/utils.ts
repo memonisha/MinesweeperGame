@@ -2,6 +2,7 @@
 
 import { BoardType, CellState } from './types';
 
+
 export const createEmptyBoard = (rows: number, cols: number): BoardType => {
   return Array.from({ length: rows }, (_, y) =>
     Array.from({ length: cols }, (_, x): CellState => ({
