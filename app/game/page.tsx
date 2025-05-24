@@ -3,10 +3,9 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import BoardComponent from '../../components/Board';
-import { Board } from '../../lib/types';   
-import { createEmptyBoard, placeMines, revealCell } from '../../lib/utils';
-
+import BoardComponent from '../components/Board'; // ✅ Correct path (1 level up)
+import { Board } from '../lib/types';            // ✅ Path adjusted
+import { createEmptyBoard, placeMines, revealCell } from '../lib/utils'; // ✅ Fixed typo
 
 const ROWS = 8;
 const COLS = 8;
