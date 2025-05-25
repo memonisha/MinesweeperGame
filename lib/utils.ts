@@ -41,8 +41,8 @@ export const calculateAdjacents = (board: BoardType): BoardType => {
       if (board[y][x].isMine) continue;
 
       let count = 0;
-      for (let dx of directions) {
-        for (let dy of directions) {
+      for (const dx of directions) {
+        for (const dy of directions) {
           if (dx === 0 && dy === 0) continue;
           const nx = x + dx;
           const ny = y + dy;
@@ -67,8 +67,8 @@ export const revealCell = (board: BoardType, row: number, col: number): BoardTyp
   if (board[row][col].adjacentMines === 0 && !board[row][col].isMine) {
     const directions = [-1, 0, 1];
 
-    for (let dx of directions) {
-      for (let dy of directions) {
+    for (const dx of directions) {
+      for (const dy of directions) {
         if (dx === 0 && dy === 0) continue;
         const newRow = row + dy;
         const newCol = col + dx;

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { CellType } from '../types';
+import { CellType } from '../../lib/types';
 import './Cell.css';
 
 interface Props {

@@ -1,10 +1,12 @@
+
+
 export type CellType = {
   x: number;
   y: number;
   isMine: boolean;
-  adjacentMines: number;
   isRevealed: boolean;
   isFlagged: boolean;
+  adjacentMines: number;
 };
 
 export type BoardType = CellType[][];

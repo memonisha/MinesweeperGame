@@ -1,5 +1,5 @@
 import React from 'react';
-import Board from './components/Board';
+import Board from './components/GameBoard';
 import './styles/home.css';
 
 export default function HomePage() {

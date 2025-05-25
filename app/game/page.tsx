@@ -2,15 +2,16 @@
 
 import React, { useEffect, useState } from 'react';
 import BoardComponent from '../components/Board'; // stays relative
-import { Board } from '@/lib/types'; // ✅ updated alias
+import { BoardType } from '@/lib/types'; // ✅ updated alias
 import { createEmptyBoard, placeMines, revealCell } from '@/lib/utils'; // ✅ updated alias
+
 
 const ROWS = 8;
 const COLS = 8;
 const MINES = 10;
 
 export default function GamePage() {
-  const [board, setBoard] = useState<Board>([]);
+  const [board, setBoard] = useState<BoardType>([]);
 
   useEffect(() => {
     let newBoard = createEmptyBoard(ROWS, COLS);
