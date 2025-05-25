@@ -112,7 +112,7 @@ export default function Board() {
       <div className={styles.infoBar}>
         <p>🕒 Time: {formatTime(time)}</p>
         <p>👆 Clicks: {clicks}</p>
-        {highScore !== null && <p>🏆 Best Score: {highScore}</p>}
+        {highScore !== null && <p></p>}
       </div>
 
       <div className={styles.board}>

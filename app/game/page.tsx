@@ -1,11 +1,9 @@
-// app/game/page.tsx
-
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import BoardComponent from '@/components/Board';
-import { Board } from '@/types';
-import { createEmptyBoard, placeMines, revealCell } from '@/utils';
+import BoardComponent from '../components/Board'; // stays relative
+import { Board } from '@/lib/types'; // ✅ updated alias
+import { createEmptyBoard, placeMines, revealCell } from '@/lib/utils'; // ✅ updated alias
 
 const ROWS = 8;
 const COLS = 8;

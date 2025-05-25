@@ -58,3 +58,34 @@ export const calculateAdjacents = (board: BoardType): BoardType => {
 
   return board;
 };
+
+export const revealCell = (board: BoardType, row: number, col: number): BoardType => {
+  if (board[row][col].isRevealed || board[row][col].isFlagged) return board;
+
+  board[row][col].isRevealed = true;
+
+  if (board[row][col].adjacentMines === 0 && !board[row][col].isMine) {
+    const directions = [-1, 0, 1];
+
+    for (let dx of directions) {
+      for (let dy of directions) {
+        if (dx === 0 && dy === 0) continue;
+        const newRow = row + dy;
+        const newCol = col + dx;
+
+        if (
+          newRow >= 0 &&
+          newRow < board.length &&
+          newCol >= 0 &&
+          newCol < board[0].length
+        ) {
+          if (!board[newRow][newCol].isRevealed) {
+            board = revealCell(board, newRow, newCol); // recursive reveal
+          }
+        }
+      }
+    }
+  }
+
+  return [...board];
+};
